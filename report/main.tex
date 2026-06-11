@@ -438,8 +438,9 @@ The best parity-tapered circuit (UCCSD+parity) is frozen at its noiseless
 optimum $\theta^*$ and \emph{not} re-optimized. The 5-term Hamiltonian is
 partitioned into qubit-wise commuting groups
 $\{I,Z_0,Z_1,Z_0Z_1\}$ ($Z$ basis) and $\{X_0X_1\}$ ($X$ basis).
+The shot budgets are $10^1=10$ and $10^4=10{,}000$ total shots.
 \textbf{Shot-allocation rule:} the total budget is split equally over the
-groups (remainder to leading groups), e.g.\ $101\to 51+50$. For each group the
+groups (remainder to leading groups), e.g.\ $10\to 5+5$. For each group the
 energy contribution per shot,
 $Y=\sum_k c_k(-1)^{\mathrm{parity}_k(\text{bits})}$, is averaged over the raw
 outcomes; its sample variance automatically contains all intra-group

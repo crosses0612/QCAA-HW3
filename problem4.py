@@ -17,7 +17,7 @@ problem4.py -- QCAA HW3 Problem 4: VQE
     benchmark：UCCSD 兩種映射必須達 FCI（<1e-7 Ha）；HEA 至少達化學精度。
 
 (c) 取最佳 2-qubit parity 電路（不重新最佳化），在固定參數下以有限
-    shots（101 與 10^4）估計基態能量：
+    shots（10^1 與 10^4）估計基態能量：
       * ideal backend : qiskit-aer AerSimulator（shot-based, noiseless）
       * noisy backend : AerSimulator.from_backend(FakeBrisbane)
         -- target QPU = ibm_brisbane（127-qubit Eagle r3），noise model 取自
@@ -311,7 +311,7 @@ def main() -> None:
           f"{'SE (Ha)':>10s} {'mean-E_ref':>11s}")
     for label, backend, fake_arg in (("ideal", ideal_backend, None),
                                      ("noisy", noisy_backend, fake)):
-        for shots in (101, 10_000):
+        for shots in (10, 10_000):
             est = estimate_energy_shots(qc_bound, h_par, shots, backend,
                                         layout=[0, 1], fake_backend=fake_arg)
             shot_results[f"{label}_{shots}"] = est

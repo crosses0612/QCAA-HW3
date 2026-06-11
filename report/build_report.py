@@ -246,8 +246,8 @@ def generate_latex() -> None:
         "l>{\\raggedright\\arraybackslash}p{10.5cm}", "case & parameters"))
 
     body = ""
-    for key, label in (("ideal_101", "ideal"), ("ideal_10000", "ideal"),
-                       ("noisy_101", "noisy"), ("noisy_10000", "noisy")):
+    for key, label in (("ideal_10", "ideal"), ("ideal_10000", "ideal"),
+                       ("noisy_10", "noisy"), ("noisy_10000", "noisy")):
         r = p4["c_shot_results"][key]
         body += (f"{label} & {r['total_shots']} & {fnum(r['mean'], 6)} & "
                  f"{r['se']:.6f} & {fnum(r['mean'] - e_ref_parity, 6)} \\\\\n")
