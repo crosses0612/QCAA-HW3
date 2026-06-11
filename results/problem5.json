@@ -1,0 +1,66 @@
+{
+  "versions": {
+    "pennylane": "0.44.1",
+    "openfermion": "1.7.1",
+    "qiskit": "2.3.0",
+    "numpy": "2.4.4"
+  },
+  "method": "QSCI (Kanno et al. 2023); custom OpenFermion+NumPy build; no configuration recovery (noiseless sampling, samples natively in the correct sector)",
+  "amplitude_source": "classical CCSD (custom spin-orbital NumPy implementation, verified against E_CCSD benchmark)",
+  "state_preparation": "exact statevector application of exp(T - T+) to |HF> (zero-Trotter-error UCCSD reference)",
+  "conventions": {
+    "ordering": "interleaved: qubit p <-> spin orbital p; even p = alpha, odd p = beta; OpenFermion basis bit (11-p)",
+    "hf_determinant": "modes 0..3 occupied (basis index 3840)",
+    "sampling": "default_rng(13705049); single 1e5-shot stream, budgets are prefixes (nested subspaces)"
+  },
+  "benchmarks": {
+    "E_nuc": 0.9948810131660087,
+    "E_RHF": -7.862002088576488,
+    "E_MP2": -7.874872224070073,
+    "E_CCSD": -7.882381015049541,
+    "E_FCI_sector_ED": -7.8823915197785155,
+    "E_UCCSD_state": -7.882377831939082,
+    "refs": {
+      "R": 1.5957,
+      "E_nuc": 0.99488,
+      "E_HF": -7.862,
+      "E_CCSD": -7.88238,
+      "E_FCI": -7.88239
+    }
+  },
+  "ccsd_n_iter": 52,
+  "sector_probability": 1.0,
+  "qsci_results": [
+    {
+      "shots": 100,
+      "d_unique_kept": 3,
+      "n_discarded_shots": 0,
+      "E_SQD": -7.877170994745619,
+      "abs_error_vs_FCI": 0.005220525032896717
+    },
+    {
+      "shots": 1000,
+      "d_unique_kept": 9,
+      "n_discarded_shots": 0,
+      "E_SQD": -7.882147097242949,
+      "abs_error_vs_FCI": 0.00024442253556689053
+    },
+    {
+      "shots": 10000,
+      "d_unique_kept": 10,
+      "n_discarded_shots": 0,
+      "E_SQD": -7.882168832028034,
+      "abs_error_vs_FCI": 0.00022268775048139844
+    },
+    {
+      "shots": 100000,
+      "d_unique_kept": 17,
+      "n_discarded_shots": 0,
+      "E_SQD": -7.882307330929257,
+      "abs_error_vs_FCI": 8.418884925820436e-05
+    }
+  ],
+  "sector_dimension_max": 225,
+  "figure": "C:\\Users\\user\\Quantum Computation and Quantum Information Program\\HW3\\figures\\problem5_convergence.png",
+  "seed": 13705049
+}

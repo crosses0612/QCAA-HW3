@@ -1,0 +1,32 @@
+# QCAA HW3 -- environment: conda env "QML_study" (Python 3.12)
+# Install:  python -m pip install -r requirements.txt
+#
+# NOTE (Windows): PySCF and qiskit-addon-sqd have no native Windows build
+# (PySCF requires a C compiler / CMake toolchain). On this machine the
+# molecular integrals are computed with PennyLane's differentiable
+# Hartree-Fock engine instead (verified: E_RHF(H2/STO-3G) = -1.11668 Ha,
+# identical to the PySCF reference in the assignment), and the SQD step of
+# Problem 5 is a custom build on OpenFermion + NumPy, which the assignment
+# explicitly allows. On Linux/macOS/WSL the markers below pull in the
+# original packages so the Appendix-B PySCF path also works.
+
+numpy>=2.0
+scipy>=1.15
+matplotlib>=3.8
+pandas>=2.1
+
+# quantum chemistry / integral engine
+pennylane>=0.44
+
+# second quantization + fermion-to-qubit mappings (JW / BK / parity code)
+openfermion>=1.7
+
+# circuits, simulators, VQE
+qiskit>=2.3,<3
+qiskit-aer>=0.17
+qiskit-algorithms>=0.4
+qiskit-nature>=0.8
+
+# not installable on native Windows -- used automatically when available
+pyscf>=2.13;            sys_platform != "win32"
+qiskit-addon-sqd>=0.12; sys_platform != "win32"

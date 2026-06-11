@@ -1,0 +1,174 @@
+{
+  "versions": {
+    "pennylane": "0.44.1",
+    "openfermion": "1.7.1",
+    "qiskit": "2.3.0",
+    "numpy": "2.4.4"
+  },
+  "optimizer_settings": {
+    "method": "L-BFGS-B",
+    "ftol": 1e-10,
+    "maxiter": 200,
+    "init_rule": "default_rng(13705049).normal(0, 0.1, n_params)",
+    "seed": 13705049
+  },
+  "ab_vqe": {
+    "UCCSD+JW": {
+      "energy": -1.1372701748841747,
+      "params": [
+        -0.11306813861909824
+      ],
+      "n_params": 1,
+      "nfev": 10,
+      "converged": true,
+      "E_exact": -1.1372701748841747,
+      "abs_error": 0.0
+    },
+    "UCCSD+parity": {
+      "energy": -1.1372701748841743,
+      "params": [
+        -0.11306815367991598
+      ],
+      "n_params": 1,
+      "nfev": 10,
+      "converged": true,
+      "E_exact": -1.1372701748841747,
+      "abs_error": 4.440892098500626e-16
+    },
+    "real-amplitude+JW": {
+      "energy": -1.1372701746597964,
+      "params": [
+        -20.402520544206464,
+        -31.640360493682767,
+        24.795846353198545,
+        -10.995636753760445,
+        -4.716343976231881,
+        10.763519082518028,
+        58.069878705859956,
+        -4.712398601105408,
+        7.623555712386217,
+        -1.9081411878469303,
+        -25.13280603082775,
+        15.707973314125386
+      ],
+      "n_params": 12,
+      "nfev": 572,
+      "converged": true,
+      "E_exact": -1.1372701748841747,
+      "abs_error": 2.243782937227934e-10
+    },
+    "real-amplitude+parity": {
+      "energy": -1.1372701748836977,
+      "params": [
+        0.02549947330076666,
+        -0.12939259964041738,
+        0.22913578652607314,
+        -0.11719591677311848,
+        -0.022472087585727267,
+        0.012554665618628894
+      ],
+      "n_params": 6,
+      "nfev": 49,
+      "converged": true,
+      "E_exact": -1.1372701748841747,
+      "abs_error": 4.769518113789672e-13
+    }
+  },
+  "E_FCI_ref": -1.13727,
+  "c_best_parity_case": "UCCSD+parity",
+  "c_backends": {
+    "ideal": "qiskit-aer AerSimulator (shot-based, no noise)",
+    "noisy": "AerSimulator.from_backend(FakeBrisbane)",
+    "target_qpu": "ibm_brisbane (127-qubit Eagle r3)",
+    "noise_model_source": "qiskit-ibm-runtime fake provider calibration snapshot",
+    "noise_model_parameters": {
+      "backend": "fake_brisbane",
+      "n_qubits": 127,
+      "median_T1_us": 231.95327941729698,
+      "median_T2_us": 150.0402732169314,
+      "median_sx_error": 0.0002425970240311255,
+      "median_ecr_error": 0.007719371932640273,
+      "median_readout_error": 0.02001953125
+    }
+  },
+  "c_shot_allocation_rule": "equal split over qubit-wise commuting groups, remainder to leading groups",
+  "c_shot_results": {
+    "ideal_101": {
+      "total_shots": 101,
+      "mean": -1.1273484347532676,
+      "se": 0.025593714015212866,
+      "groups": [
+        {
+          "basis": "XX",
+          "shots": 51,
+          "mean": -0.35061766890971535,
+          "se": 0.025593714015212866
+        },
+        {
+          "basis": "ZZ",
+          "shots": 50,
+          "mean": -0.7767307658435524,
+          "se": 1.5860328923216524e-17
+        }
+      ]
+    },
+    "ideal_10000": {
+      "total_shots": 10000,
+      "mean": -1.1360053992462147,
+      "se": 0.0035926276207541145,
+      "groups": [
+        {
+          "basis": "XX",
+          "shots": 5000,
+          "mean": -0.3807073453536006,
+          "se": 0.002498439831159497
+        },
+        {
+          "basis": "ZZ",
+          "shots": 5000,
+          "mean": -0.755298053892614,
+          "se": 0.002581621899403759
+        }
+      ]
+    },
+    "noisy_101": {
+      "total_shots": 101,
+      "mean": -0.9968610740375852,
+      "se": 0.05286929798883604,
+      "groups": [
+        {
+          "basis": "XX",
+          "shots": 51,
+          "mean": -0.3435083039054896,
+          "se": 0.025633180058725363
+        },
+        {
+          "basis": "ZZ",
+          "shots": 50,
+          "mean": -0.6533527701320956,
+          "se": 0.04623962315924847
+        }
+      ]
+    },
+    "noisy_10000": {
+      "total_shots": 10000,
+      "mean": -1.0647554489122695,
+      "se": 0.004691069455091749,
+      "groups": [
+        {
+          "basis": "XX",
+          "shots": 5000,
+          "mean": -0.3729481843879886,
+          "se": 0.0025212436314940466
+        },
+        {
+          "basis": "ZZ",
+          "shots": 5000,
+          "mean": -0.6918072645242808,
+          "se": 0.003955940240087749
+        }
+      ]
+    }
+  },
+  "seed": 13705049
+}

@@ -1,0 +1,14 @@
+\begin{table}[H]
+\centering\small
+\begin{tabular}{lrrrcc}
+\toprule
+case & $E_\mathrm{VQE}$ (Ha) & $E_\mathrm{exact}$ (Ha) & abs.\ error & \#params & \#evals \\
+\midrule
+UCCSD+JW & -1.13727017 & -1.13727017 & \ensuremath{1.0\times10^{-16}} & 1 & 10 \\
+UCCSD+parity & -1.13727017 & -1.13727017 & \ensuremath{4.4\times10^{-16}} & 1 & 10 \\
+real-amplitude+JW & -1.13727017 & -1.13727017 & \ensuremath{2.2\times10^{-10}} & 12 & 572 \\
+real-amplitude+parity & -1.13727017 & -1.13727017 & \ensuremath{4.8\times10^{-13}} & 6 & 49 \\
+\bottomrule
+\end{tabular}
+\caption{VQE results on the noiseless statevector simulator (shared settings in the text).}
+\end{table}

@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# IDE / Cursor
+.cursor/
+
+# LaTeX build artifacts
+report/*.aux
+report/*.log
+report/*.out
+report/main.pdf
+
+# Local submission PDF
+HW3_13705049.pdf
+QCAA_HW3.pdf
+
+# Local environment smoke test
+test.py
+
+# OS
+Thumbs.db
+.DS_Store
